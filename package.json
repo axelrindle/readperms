@@ -1,0 +1,16 @@
+{
+  "name": "readperms",
+  "version": "1.0.0",
+  "description": "Node module for reading UNIX file permissions. Edit",
+  "main": "cli.js",
+  "repository": "git@github.com:axelrindle/readperms.git",
+  "author": "Axel Rindle <axel.rindle@gmx.de>",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^2.3.0",
+    "commander": "^2.11.0"
+  },
+  "bin": {
+    "readperms": "./cli.js"
+  }
+}
