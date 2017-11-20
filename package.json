@@ -1,7 +1,7 @@
 {
   "name": "readperms",
   "version": "1.0.0",
-  "description": "Node module for reading UNIX file permissions. Edit",
+  "description": "Node cli app for reading UNIX file permissions.",
   "main": "cli.js",
   "repository": "git@github.com:axelrindle/readperms.git",
   "author": "Axel Rindle <axel.rindle@gmx.de>",
