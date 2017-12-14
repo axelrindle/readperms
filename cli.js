@@ -5,6 +5,7 @@ const fs = require('fs');
 const child_process = require('child_process');
 const pkg = require('./package.json');
 const program = require('commander');
+const columnify = require('columnify');
 
 program
   .version(pkg.version)
@@ -20,13 +21,32 @@ if (program.rawArgs.length < 4 || program.args.length === 0) {
   program.help();
 } else {
   var options = "%n";
-  var cmd = 'stat -c ';
+  var columns = ["name"]
+  var cmd = "stat -c ";
 
-  if (program.user)           options = "%U " + options;
-  if (program.group)          options = "%G " + options;
-  if (program.octal)          options = "%a " + options;
-  if (program.humanReadable)  options = "%A " + options;
+  if (program.user)          { options = "%U " + options; columns.unshift("user"); }
+  if (program.group)         { options = "%G " + options; columns.unshift("group"); }
+  if (program.octal)         { options = "%a " + options; columns.unshift("octal"); }
+  if (program.humanReadable) { options = "%A " + options; columns.unshift("humanReadable"); }
 
   cmd = cmd + '"' + options + '" ' + program.args.join(" ");
-  console.log(child_process.execSync(cmd).toString());
+
+  // filter and split results for columnifying
+  var result = child_process.execSync(cmd).toString();
+  var lines = result.split("\n");
+  var lines_filtered = lines.filter(value => value !== "");
+  var data = [];
+  lines_filtered.forEach(el => {
+    var all = el.split(" ");
+    var obj = {};
+    all.forEach((el, i) => {
+      obj[columns[i]] = el;
+    });
+    data.push(obj);
+  });
+
+  // log results
+  console.log(columnify(data, {
+    minWidth: 10
+  }));
 }
