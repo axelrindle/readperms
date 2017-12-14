@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 'use strict';
 
-const chalk = require('chalk');
 const fs = require('fs');
 const child_process = require('child_process');
 const pkg = require('./package.json');
