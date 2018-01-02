@@ -7,11 +7,17 @@
   "author": "Axel Rindle <axel.rindle@gmx.de>",
   "license": "MIT",
   "dependencies": {
+    "bluebird": "^3.5.1",
+    "chalk": "^2.3.0",
     "columnify": "^1.5.4",
-    "commander": "^2.11.0"
+    "commander": "^2.11.0",
+    "github-version-checker": "^1.2.0"
   },
   "bin": {
     "readperms": "./cli.js"
   },
-  "os" : [ "darwin", "linux" ]
+  "os": [
+    "darwin",
+    "linux"
+  ]
 }
