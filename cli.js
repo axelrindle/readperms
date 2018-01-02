@@ -8,6 +8,7 @@ const program = require('commander');
 const columnify = require('columnify');
 
 program
+  .name("readperms")
   .version(pkg.version)
   .usage("[options] <files/dirs...>")
   .description("Print the permission attributes of the given files and directories")
