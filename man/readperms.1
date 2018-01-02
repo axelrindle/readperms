@@ -1,0 +1,36 @@
+.\" Manpage for readperms.
+.\" Contact axel.rindle@gmx.de to correct errors or typos.
+.TH readperms 1 "2nd January 2018" "v1.1.1" "readperms man page"
+.SH NAME
+readperms \- Node cli app for reading UNIX file permissions.
+.SH SYNOPSIS
+readperms [options] <files/dirs...>
+.SH DESCRIPTION
+readperms is a node.js app for reading file or directory permission attributes on UNIX like systems. Basically it is a wrapper for 
+.B stat
+, but with named and columnified output.
+.SH OPTIONS
+.TP
+.B \-h, \-\-human-readable
+print the access rights in human readable form
+.TP
+.B \-u, \-\-user
+print user name of owner
+.TP
+.B \-g, \-\-group
+print group name of owner
+.TP
+.B \-o, \-\-octal
+print access rights in octal
+.TP
+.B \-\-help
+output usage information
+.TP
+.B \-V, \-\-version
+output the version number
+.SH SEE ALSO
+.B stat(1)
+.SH BUGS
+.B https://github.com/axelrindle/readperms/issues
+.SH AUTHOR
+Axel Rindle <axel.rindle@gmx.de>

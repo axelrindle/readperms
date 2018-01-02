@@ -19,5 +19,6 @@
   "os": [
     "darwin",
     "linux"
-  ]
+  ],
+  "man": "./man/doc.1"
 }
