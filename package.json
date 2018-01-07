@@ -18,7 +18,8 @@
   },
   "os": [
     "darwin",
-    "linux"
+    "linux",
+    "android"
   ],
   "man": "./man/readperms.1"
 }
