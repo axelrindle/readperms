@@ -23,3 +23,6 @@ For help type:
 ```bash
 $ readperms --help
 ```
+
+## License
+[MIT](https://github.com/axelrindle/readperms/blob/master/LICENSE)
