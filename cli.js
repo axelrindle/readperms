@@ -23,17 +23,17 @@ program
 
 // Handler function
 const execute = () => {
-	if (program.rawArgs.length < 4 || program.args.length === 0) {
-		program.help();
-	} else {
-		let options = '%n';
-		const columns = ['file/directory'];
-		let cmd = 'stat -c ';
+  if (program.rawArgs.length < 4 || program.args.length === 0) {
+    program.help();
+  } else {
+    let options = '%n';
+    const columns = ['file/directory'];
+    let cmd = 'stat -c ';
 
-        if (program.group) {         options = '%G ' + options; columns.unshift('group');         }
-        if (program.user) {          options = '%U ' + options; columns.unshift('user');          }
-		if (program.octal) {         options = '%a ' + options; columns.unshift('octal');         }
-		if (program.humanReadable) { options = '%A ' + options; columns.unshift('humanReadable'); }
+    if (program.group) {         options = '%G ' + options; columns.unshift('group');         }
+    if (program.user) {          options = '%U ' + options; columns.unshift('user');          }
+    if (program.octal) {         options = '%a ' + options; columns.unshift('octal');         }
+    if (program.humanReadable) { options = '%A ' + options; columns.unshift('humanReadable'); }
 
     cmd = cmd + '"' + options + '" ' + program.args.join(' ');
 
