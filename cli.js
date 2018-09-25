@@ -27,7 +27,7 @@ const execute = () => {
 		program.help();
 	} else {
 		let options = '%n';
-		const columns = ['name']
+		const columns = ['file/directory'];
 		let cmd = 'stat -c ';
 
         if (program.group) {         options = '%G ' + options; columns.unshift('group');         }
