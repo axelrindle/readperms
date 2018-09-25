@@ -39,10 +39,9 @@ const execute = () => {
 
     // filter and split results for columnifying
     const result = child_process.execSync(cmd).toString();
-    const lines = result.split('\n');
-    const lines_filtered = lines.filter(value => value !== '');
+    const lines = result.split('\n').filter(value => value !== '');
     const data = [];
-    lines_filtered.forEach(el => {
+    lines.forEach(el => {
       const all = el.split(' ');
       const obj = {};
       all.forEach((el, i) => {
