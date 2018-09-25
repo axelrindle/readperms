@@ -1,11 +1,7 @@
 #!/usr/bin/env node
 'use strict';
 
-// Bluebird action
-global.Promise = require('bluebird');
-
 // Require modules
-const fs = require('fs');
 const child_process = require('child_process');
 const pkg = require('./package.json');
 const program = require('commander');
