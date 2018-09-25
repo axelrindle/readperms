@@ -59,9 +59,10 @@ const execute = () => {
 };
 
 // Check for updates
-var updateOpts = {
-  repo: 'axelrindle/readperms',
-  currentVersion: require('./package.json').version
+const updateOpts = {
+  owner: 'axelrindle',
+  repo: 'readperms',
+  currentVersion: pkg.version
 };
 versionCheck(updateOpts)
   .then((update) => {
