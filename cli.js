@@ -38,13 +38,13 @@ const execute = () => {
     cmd = cmd + '"' + options + '" ' + program.args.join(' ');
 
     // filter and split results for columnifying
-    var result = child_process.execSync(cmd).toString();
-    var lines = result.split('\n');
-    var lines_filtered = lines.filter(value => value !== '');
-    var data = [];
+    const result = child_process.execSync(cmd).toString();
+    const lines = result.split('\n');
+    const lines_filtered = lines.filter(value => value !== '');
+    const data = [];
     lines_filtered.forEach(el => {
-      var all = el.split(' ');
-      var obj = {};
+      const all = el.split(' ');
+      const obj = {};
       all.forEach((el, i) => {
         obj[columns[i]] = el;
       });
