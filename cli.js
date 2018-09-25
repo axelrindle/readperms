@@ -16,9 +16,9 @@ program
   .usage('[options] <files/dirs...>')
   .description('Print the permission attributes of the given files and directories')
   .option('-h, --human-readable', 'print the access rights in human readable form')
+  .option('-o, --octal', 'print access rights in octal')
   .option('-u, --user', 'print user name of owner')
   .option('-g, --group', 'print group name of owner')
-  .option('-o, --octal', 'print access rights in octal')
   .parse(process.argv);
 
 // Handler function
@@ -30,10 +30,10 @@ const execute = () => {
 		const columns = ['name']
 		let cmd = 'stat -c ';
 
-		if (program.user)          options = '%U ' + options; columns.unshift('user');
-		if (program.group)         options = '%G ' + options; columns.unshift('group');
-		if (program.octal)         options = '%a ' + options; columns.unshift('octal');
-		if (program.humanReadable) options = '%A ' + options; columns.unshift('humanReadable');
+        if (program.group) {         options = '%G ' + options; columns.unshift('group');         }
+        if (program.user) {          options = '%U ' + options; columns.unshift('user');          }
+		if (program.octal) {         options = '%a ' + options; columns.unshift('octal');         }
+		if (program.humanReadable) { options = '%A ' + options; columns.unshift('humanReadable'); }
 
     cmd = cmd + '"' + options + '" ' + program.args.join(' ');
 
