@@ -20,5 +20,8 @@
     "linux",
     "android"
   ],
-  "man": "./man/readperms.1"
+  "man": "./man/readperms.1",
+  "engines": {
+    "node": ">=8.12.0"
+  }
 }
