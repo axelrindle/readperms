@@ -77,4 +77,4 @@ versionCheck(updateOpts)
       console.error(chalk.red('  Failed to check for updates!'));
     }
   })
-  .finally(execute);
+  .then(execute);
