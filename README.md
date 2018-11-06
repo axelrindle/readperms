@@ -8,10 +8,6 @@
 ```bash
 $ npm install -g readperms
 ```
-or
-```bash
-$ yarn global add readperms
-```
 
 ## Usage
 
